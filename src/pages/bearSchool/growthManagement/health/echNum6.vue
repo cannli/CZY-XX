@@ -63,16 +63,23 @@
         this.chart = echarts.init(this.$el, 'macarons')
 
         this.chart.setOption({
-          tooltip: {
-            trigger: 'axis',
-            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-              type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+          toolbox: {
+            show: true,
+            feature: {
+              mark: {show: true},
+              dataView: {show: true, readOnly: false},
+              saveAsImage: {show: true}
             }
           },
+          tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+          },
           legend: {
-            //orient: 'vertical',
+            orient: 'vertical',
             // x: 'left',
             // x: '5%',
+            top:'5%',
             type: 'scroll',
             data: this.curPieObj.dataArr
           },
@@ -80,14 +87,14 @@
             {
               name: '本次风险比例',
               type: 'pie',
-              radius : '40%',
+              radius : '50%',
               center: ['20%', '50%'],
               data: this.curPieObj.curPie
             },
             {
               name: '上次风险比例',
               type: 'pie',
-              radius : '40%',
+              radius : '50%',
               center: ['70%', '50%'],
               data: this.curPieObj.lastPie
             }

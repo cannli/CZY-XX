@@ -1,132 +1,10 @@
 exports.install = function (Vue, options) {
   'use strict'
-  Vue.prototype.ajaxDate = function (type, url, params, okCb, errCb) {
-    if (typeof okCb === 'undefined' && typeof params === 'function') {
-      errCb = okCb
-      okCb = params
-      params = {}
-    }
-    $.ajax({
-      type: type,
-      url: url,
-      data: params,
-      dataType: 'json',
-      timeout: 30000,
-      // async : true, //异步请求
-      success: function (result) {
-        var code = result.code
-        if (code == '1') {
-          if (result.page) {
-            okCb && okCb(result)
-          } else {
-            okCb && okCb(result.data)
-          }
-        } else {
-          errCb && errCb(result.msg)
-        }
-      },
-      complete: function (XMLHttpRequest, status) {
-        if (status == 'timeout' || status == 'error') { // 超时,status还有success,error等值的情况
-          errCb && errCb()
-        }
-      }
-    })
-  }
-
-  Vue.prototype.ajaxDateFile = function (url, data, okCb, progress, errCb) {
-    if (typeof callback === 'undefined' && typeof params === 'function') {
-      errCb = okCb
-      okCb = params
-      params = {}
-    }
-    var xhrOnProgress = function (fun) {
-      xhrOnProgress.onprogress = fun     // 绑定监听
-      // 使用闭包实现监听绑
-      return function () {
-        // 通过$.ajaxSettings.xhr();获得XMLHttpRequest对象
-        var xhr = $.ajaxSettings.xhr()
-        // 判断监听函数是否为函数
-        if (typeof xhrOnProgress.onprogress !== 'function')
-          return xhr
-        // 如果有监听函数并且xhr对象支持绑定时就把监听函数绑定上去
-        if (xhrOnProgress.onprogress && xhr.upload) {
-          xhr.upload.onprogress = xhrOnProgress.onprogress
-        }
-        return xhr
-      }
-    }
-    $.ajax({
-      url: url,
-      type: 'POST',
-      cache: false,
-      processData: false, // processData设置为false。因为data值是FormData对象，不需要对数据做处理。
-      contentType: false,
-      timeout: 120000,    // 2min超时
-      data: data,
-      success: function (result) {
-        var code = result.code
-        if (code == '200') {
-          if (result.page) {
-            okCbokCb && okCb(result)
-          } else {
-            okCb && okCb(result.data)
-          }
-        } else {
-          errCb && errCb(result.msg)
-        }
-      },
-      complete: function (XMLHttpRequest, status) {
-        if (status == 'timeout') { // 超时,status还有success,error等值的情况
-          errCb && errCb('校验超时')
-        } else if (status == 'error') {
-          errCb && errCb('校验失败')
-        }
-      },
-      xhr: xhrOnProgress(function (e) {
-        var percent = e.loaded / e.total  // 计算百分比
-        progress && progress(percent)
-      })
-    })
-  }
-
-  Vue.prototype.fileDownload = function (url, params) {
-    var paramsStr = '?'
-    for (var n in params) {
-      paramsStr += n + '=' + params[n] + '&'
-    }
-    var from = document.createElement('form')
-    from.setAttribute('method', 'post')
-    from.setAttribute('action', url + paramsStr)
-    from.setAttribute('id', 'postFrom')
-    document.body.appendChild(from)
-    from.submit()
-    document.body.removeChild(from)
-    // $('<form method="post" action="' + url + paramsStr + '">
-    // <input name= value= />
-    // </form>').appendTo('body').submit().remove();
-  }
-
-  Vue.prototype.urlName = function (name) {
-    var url = decodeURI(location.href)
-    var str = url.split('?')[1]
-    if (typeof (str) != 'undefined') {
-      var param = str.split('&')
-      for (var i = 0; param != null && i < param.length; i++) {
-        var para = param[i].split('=')
-        if (para[0] == name) {
-          return para[1]
-        }
-      }
-    }
-    return null
-  }
-
-
   // rate 传1就会保留2位小数
   Vue.prototype.isNull = function (str, rate) {
     var isRate = rate == 1 ? true : false
     if (str == null || str == undefined || str == '') {
-      return (isRate ? '0.00' : '-')
+      return (isRate ? '0.00' : '0')
     } else {
       if (isRate) {
         return (str * 1).toFixed(2)
@@ -253,28 +131,6 @@ exports.install = function (Vue, options) {
 
     // return str;
     return (islose ? '-' + str : str)
-  }
-
-  var enumConfigStorage = {}
-
-  Vue.prototype.storageEnumConfig = function (val) {
-    enumConfigStorage = val
-  }
-
-  Vue.prototype.handleStorageEnumConfig = function (val) {
-    return enumConfigStorage[val]
-  }
-
-  Vue.prototype.valueType = function (name, val) {
-    if (val == null || val == undefined) {
-      return '无'
-    }
-    for (var n in enumConfigStorage[name]) {
-      if (enumConfigStorage[name][n].val == val) {
-        return enumConfigStorage[name][n].name
-      }
-    }
-    return '无'
   }
 
   //删除数组中某一个元素

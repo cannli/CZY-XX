@@ -48,59 +48,57 @@
               <el-row class="row"><!--<el-col :span="10">133.6→134.8CM
                   <img src="./img/hongse-icon.png" style="margin-left: 10px;"/>
                 </el-col>-->
-                <el-col :offset="1" :span="23" class="nowrap"><span>平均身高：{{all.height}}CM
-                  <span class="icon-span">→</span>{{all.lastHeight}}CM</span>
-                  <img v-if="all.height<all.lastHeight" src="./img/hongse-icon.png" style="margin-left: 10px;"/>
-                  <img v-if="all.height>all.lastHeight" src="./img/luse-icon.png" style="margin-left: 10px;"/>
+                <el-col :offset="1" :span="23" class="nowrap"><span>平均身高：{{all.lastHeight}}CM
+                  <span class="icon-span">→</span>{{all.height}}CM</span>
+                  <img v-if="all.height<all.lastHeight" src="./img/luse-icon.png" style="margin-left: 10px;"/>
+                  <img v-if="all.height>all.lastHeight" src="./img/hongse-icon.png" style="margin-left: 10px;"/>
                 </el-col>
 
               </el-row>
               <el-row class="row">
                 <el-col :offset="1" :span="13" class="nowrap">&emsp;&emsp;<span title="男生平均身高变化情况">男生平均身高变化情况：</span>
                 </el-col>
-                <el-col :span="10">{{all.manH}}CM<span class="icon-span">→</span>{{all.lastManH}}CM
-                  <img v-if="all.manH<lastFemale.lastManH" src="./img/hongse-icon.png"
-                       style="margin-left: 28px;"/>
-                  <img v-if="all.manH>all.lastManH" src="./img/luse-icon.png"
-                       style="margin-left: 28px;"/>
+                <el-col :span="10">{{all.lastManH}}CM<span class="icon-span">→</span>{{all.manH}}CM
+                  <img v-if="all.manH<lastFemale.lastManH" src="./img/luse-icon.png"  style="margin-left: 3px;"/>
+                  <img v-if="all.manH>all.lastManH" src="./img/hongse-icon.png" style="margin-left: 3px;"/>
                 </el-col>
               </el-row>
               <el-row class="row" style="border-bottom: 1px #cccccc solid;">
                 <el-col :offset="1" :span="13" class="nowrap">
                   <span title="女生平均身高变化情况：">&emsp;&emsp;女生平均身高变化情况：</span>
                 </el-col>
-                <el-col :span="10">{{all.femaleH}}CM<span class="icon-span">→</span>{{all.lastFemaleH}}CM
+                <el-col :span="10">{{all.lastFemaleH}}CM<span class="icon-span">→</span>{{all.femaleH}}CM
 
-                  <img v-if="all.femaleH<all.lastFemaleH" src="./img/hongse-icon.png"
+                  <img v-if="all.femaleH<all.lastFemaleH" src="./img/luse-icon.png"
                        style="margin-left: 28px;"/>
-                  <img v-if="all.femaleH>all.lastFemaleH" src="./img/luse-icon.png"
+                  <img v-if="all.femaleH>all.lastFemaleH" src="./img/hongse-icon.png"
                        style="margin-left: 28px;"/>
 
                 </el-col>
               </el-row>
 
               <el-row class="row">
-                <el-col :offset="1" :span="23" class="nowrap"><span>平均体重：{{all.weight}}KG<span
-                  class="icon-span">→</span>{{all.lastWeight}}KG</span>
-                  <img v-if="all.weight<all.lastWeight" src="./img/hongse-icon.png" style="margin-left: 10px;"/>
+                <el-col :offset="1" :span="23" class="nowrap"><span>平均体重：{{all.lastWeight}}KG<span
+                  class="icon-span">→</span>{{all.weight}}KG</span>
+                  <img v-if="all.weight<all.lastWeight" src="./img/luse-icon.png" style="margin-left: 10px;"/>
+                  <img v-if="all.weight>all.lastWeight" src="./img/hongse-icon.png" style="margin-left: 10px;"/>
                 </el-col>
-                <img v-if="all.weight>all.lastWeight" src="./img/luse-icon.png" style="margin-left: 10px;"/>
               </el-row>
               <el-row class="row">
                 <el-col :offset="1" :span="13" class="nowrap">
                   <span title="男生平均体重变化情况">&emsp;&emsp;男生平均体重变化情况：</span></el-col>
-                <el-col :span="10">{{all.manW}}KG<span class="icon-span">→</span>{{all.lastManW}}KG
-                  <img v-if="all.manW>all.lastManW" src="./img/hongse-icon.png" style="margin-left: 28px;"/>
-                  <img v-if="all.manW<all.lastManW" src="./img/luse-icon.png" style="margin-left: 28px;"/>
+                <el-col :span="10">{{all.lastManW}}KG<span class="icon-span">→</span>{{all.manW}}KG
+                  <img v-if="all.manW>all.lastManW" src="./img/hongse-icon.png" style="margin-left: 3px;"/>
+                  <img v-if="all.manW<all.lastManW" src="./img/luse-icon.png" style="margin-left: 3px;"/>
                 </el-col>
               </el-row>
               <el-row class="row">
                 <el-col :offset="1" :span="13" class="nowrap"><span title="女生平均体重变化情况">&emsp;&emsp;女生平均体重变化情况：</span>
                 </el-col>
-                <el-col :span="10">{{all.femaleW}}KG<span class="icon-span">→</span>{{all.lastFemaleW}}KG
-                  <img v-if="all.femaleW>all.lastFemaleW" src="./img/hongse-icon.png"
+                <el-col :span="10">{{all.lastFemaleW}}KG<span class="icon-span">→</span>{{all.femaleW}}KG
+                  <img v-if="all.femaleW>all.lastFemaleW" src="./img/luse-icon.png"
                        style="margin-left: 28px;"/>
-                  <img v-if="all.femaleW<all.lastFemaleW" src="./img/luse-icon.png"
+                  <img v-if="all.femaleW<all.lastFemaleW" src="./img/hongse-icon.png"
                        style="margin-left: 28px;"/>
                 </el-col>
               </el-row>
@@ -117,66 +115,66 @@
             <div class="text item">
               <el-row class="row">
                 <el-col :offset="1" :span="13" class="nowrap">超重（BMI指数超标）人群变化：</el-col>
-                <el-col :span="10">{{isNull(bmi.overWeight)}}<span class="icon-span">→</span>{{isNull(lastBmi.overWeight)}}人
-                  <img v-if="bmi.overWeight<lastBmi.overWeight" src="./img/hongse-icon.png"
+                <el-col :span="10">{{isNull(lastBmi.overWeight)}}<span class="icon-span">→</span>{{isNull(bmi.overWeight)}}人
+                  <img v-if="bmi.overWeight<lastBmi.overWeight" src="./img/luse-icon.png"
                        style="margin-left: 30px;"/>
-                  <img v-if="bmi.overWeight>lastBmi.overWeight" src="./img/luse-icon.png"
+                  <img v-if="bmi.overWeight>lastBmi.overWeight" src="./img/hongse-icon.png"
                        style="margin-left: 30px;"/>
                 </el-col>
               </el-row>
               <el-row class="row">
                 <el-col :offset="1" :span="13" class="nowrap" style="text-indent:30px;">男生超重人群变化：</el-col>
-                <el-col :span="10">{{isNull(bmi.manOverWeight)}}
-                  <span class="icon-span">→</span>{{isNull(lastBmi.manOverWeight)}}人
+                <el-col :span="10">{{isNull(lastBmi.manOverWeight)}}
+                  <span class="icon-span">→</span>{{isNull(bmi.manOverWeight)}}人
                   <!--<img src="./img/hongse-icon.png" style="margin-left: 30px;"/>-->
-                  <img v-if="bmi.manOverWeight<lastBmi.manOverWeight" src="./img/hongse-icon.png"
+                  <img v-if="bmi.manOverWeight<lastBmi.manOverWeight" src="./img/luse-icon.png"
                        style="margin-left: 30px;"/>
-                  <img v-if="bmi.manOverWeight>lastBmi.manOverWeight" src="./img/luse-icon.png"
+                  <img v-if="bmi.manOverWeight>lastBmi.manOverWeight" src="./img/hongse-icon.png"
                        style="margin-left: 30px;"/>
                 </el-col>
               </el-row>
               <el-row class="row">
                 <el-col :offset="1" :span="13" class="nowrap" style="text-indent:30px;">女生超重人群变化：</el-col>
                 <el-col :span="10">
-                  {{isNull(bmi.femaleOverWeight)}}<span class="icon-span">→</span>
-                  {{isNull(lastBmi.femaleOverWeight)}}人
+                  {{isNull(lastBmi.femaleOverWeight)}}<span class="icon-span">→</span>
+                  {{isNull(bmi.femaleOverWeight)}}人
                   <!--<img src="./img/luse-icon.png" style="margin-left: 30px;"/>-->
                   <img v-if="bmi.femaleOverWeight<lastBmi.femaleOverWeight"
-                       src="./img/hongse-icon.png" style="margin-left: 30px;"/>
-                  <img v-if="bmi.femaleOverWeight>lastBmi.femaleOverWeight" src="./img/luse-icon.png"
+                        src="./img/luse-icon.png" style="margin-left: 30px;"/>
+                  <img v-if="bmi.femaleOverWeight>lastBmi.femaleOverWeight" src="./img/hongse-icon.png"
                        style="margin-left: 30px;"/>
                 </el-col>
               </el-row>
               <el-row class="row">
                 <el-col :offset="1" :span="13" class="nowrap">偏廋（BMI指数低于标准）人群变化:</el-col>
-                <el-col :span="10">{{isNull(bmi.lowWeight)}}<span class="icon-span">→</span>
-                  {{isNull(lastBmi.lowWeight)}}人
-                  <img v-if="bmi.lowWeight<lastBmi.lowWeight" src="./img/hongse-icon.png"
+                <el-col :span="10">{{isNull(lastBmi.lowWeight)}}<span class="icon-span">→</span>
+                  {{isNull(bmi.lowWeight)}}人
+                  <img v-if="bmi.lowWeight<lastBmi.lowWeight" src="./img/luse-icon.png"
                        style="margin-left: 30px;"/>
-                  <img v-if="bmi.lowWeight>lastBmi.lowWeight" src="./img/luse-icon.png"
+                  <img v-if="bmi.lowWeight>lastBmi.lowWeight" src="./img/hongse-icon.png"
                        style="margin-left: 30px;"/>
                   <!--<img src="./img/luse-icon.png" style="margin-left: 30px;"/>-->
                 </el-col>
               </el-row>
               <el-row class="row">
                 <el-col :offset="1" :span="13" class="nowrap" style="text-indent:30px;">男生偏瘦人群变化:</el-col>
-                <el-col :span="10">{{isNull(bmi.manLowWeight)}}<span class="icon-span">→</span>
-                  {{isNull(lastBmi.manLowWeight)}}人
-                  <img v-if="bmi.manLowWeight<lastBmi.manLowWeight" src="./img/hongse-icon.png"
+                <el-col :span="10">{{isNull(lastBmi.manLowWeight)}}<span class="icon-span">→</span>
+                  {{isNull(bmi.manLowWeight)}}人
+                  <img v-if="bmi.manLowWeight<lastBmi.manLowWeight" src="./img/luse-icon.png"
                        style="margin-left: 44px;"/>
-                  <img v-if="bmi.manLowWeight>lastBmi.manLowWeight" src="./img/luse-icon.png"
+                  <img v-if="bmi.manLowWeight>lastBmi.manLowWeight" src="./img/hongse-icon.png"
                        style="margin-left: 44px;"/>
                   <!--<img src="./img/luse-icon.png" style="margin-left: 44px;"/>-->
                 </el-col>
               </el-row>
               <el-row class="row">
                 <el-col :offset="1" :span="13" class="nowrap" style="text-indent:30px;">女生偏瘦人群变化:</el-col>
-                <el-col :span="10">{{isNull(bmi.femalLowWeight)}}<span class="icon-span">→</span>
-                  {{isNull(lastBmi.femalLowWeight)}}人
+                <el-col :span="10">{{isNull(lastBmi.femalLowWeight)}}<span class="icon-span">→</span>
+                  {{isNull(bmi.femalLowWeight)}}人
                   <!--<img src="./img/luse-icon.png" style="margin-left: 30px;"/>-->
-                  <img v-if="bmi.femalLowWeight<lastBmi.femalLowWeight" src="./img/hongse-icon.png"
+                  <img v-if="bmi.femalLowWeight<lastBmi.femalLowWeight" src="./img/luse-icon.png"
                        style="margin-left: 30px;"/>
-                  <img v-if="bmi.femalLowWeight>lastBmi.femalLowWeight" src="./img/luse-icon.png"
+                  <img v-if="bmi.femalLowWeight>lastBmi.femalLowWeight" src="./img/hongse-icon.png"
                        style="margin-left: 30px;"/>
                 </el-col>
               </el-row>
@@ -312,11 +310,10 @@
                   </div>
 
                   <div class="tip3">
-                    <strong
-                      class="strong">{{avgHwLast.manHeight?isNull(avgHwLast.manHeight-avgHw.manHeight,1):'-'}}CM</strong>
-                    <img v-if="avgHwLast.manHeight-avgHw.manHeight>0" src="./img/hongse-icon.png"
-                         style="margin-left: 10px;"/>
-                    <img v-if="avgHwLast.manHeight-avgHw.manHeight<0" src="./img/luse-icon.png"
+                    <strong class="strong">{{avgHwLast.manHeight?isNull(avgHwLast.manHeight-avgHw.manHeight,1):'-'}}CM</strong>
+                   <!-- <img v-if="avgHwLast.manHeight-avgHw.manHeight>0" src="./img/hongse-icon.png"
+                         style="margin-left: 10px;"/>-->
+                    <img v-if="avgHwLast.manHeight-avgHw.manHeight<0" src="./img/hongse-icon.png"
                          style="margin-left: 10px;"/>
                   </div>
                 </div>
@@ -340,9 +337,9 @@
                   <div class="tip3">
                     <strong class="strong">{{avgHwLast.femaleHeight?isNull(avgHwLast.femaleHeight-avgHw.femaleHeight,1):'-'}}CM</strong>
 
-                    <img v-if="avgHwLast.femaleHeight-avgHw.femaleHeight>0" src="./img/hongse-icon.png"
-                         style="margin-left: 10px;"/>
-                    <img v-if="avgHwLast.femaleHeight-avgHw.femaleHeight<0" src="./img/luse-icon.png"
+                   <!-- <img v-if="avgHwLast.femaleHeight-avgHw.femaleHeight>0" src="./img/hongse-icon.png"
+                         style="margin-left: 10px;"/>-->
+                    <img v-if="avgHwLast.femaleHeight-avgHw.femaleHeight<0" src="./img/hongse-icon.png"
                          style="margin-left: 10px;"/>
                   </div>
                 </div>
@@ -550,18 +547,8 @@
           <div class="card-box" style="display: inline-block;">
             <span class="card-title">两次总体风险值对比</span>
           </div>
-          <!-- <div class="bot-right">
-             <el-select v-model="value" placeholder="请选择" size="medium">
-               <el-option
-                 v-for="item in dataEnum.illnessArr"
-                 :key="item.val"
-                 :label="item.name"
-                 :value="item.val">
-               </el-option>
-             </el-select>
-           </div>-->
         </el-col>
-        <el-col :span="12" class="card">
+        <el-col :span="24" class="card">
           <div class="">
             <echartLine
               v-if="fxianObj.lastLineCur&&fxianObj.lastLineCur.length>0"
@@ -573,7 +560,7 @@
           </div>
         </el-col>
 
-        <el-col :span="12" class="card">
+        <el-col :span="24" class="card">
           <div class="">
             <echNum6 :curPieObj="curPieObj"></echNum6>
             <!--<noData></noData>-->
@@ -594,7 +581,6 @@
   import echNum6 from './health/echNum6.vue'
   import noData from 'components/noData'
   import barMultiple from 'components/echarts/barMultiple'
-
   import echartLine from 'components/echarts/line.vue'
 
   export default {
@@ -1054,7 +1040,6 @@
             this.fxianObj = {lastLineCur, legendData, dataArr}
             // 饼图
             let curPieA = data.pie.curCount[0]
-            console.log(curPieA, 'rtydrterter')
             let lastPieA = data.pie.lastCount[0]
             let curPie = []
 

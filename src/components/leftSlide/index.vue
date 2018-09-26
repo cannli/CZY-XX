@@ -74,17 +74,17 @@
               }
             ]
           },
-          {
-            title: "教务管理",
-            path: "/teachingManagement",
-            icon: "fa-table",
-            child: [
-              {
-                title: "成绩管理",
-                path: "/teachingManagement/index"
-              }
-            ]
-          },
+//          {
+//            title: "教务管理",
+//            path: "/teachingManagement",
+//            icon: "fa-table",
+//            child: [
+//              {
+//                title: "成绩管理",
+//                path: "/teachingManagement/index"
+//              }
+//            ]
+//          },
           {
             title: "人员管理",
             path: "/peopleManagement",
