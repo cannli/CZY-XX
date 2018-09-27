@@ -286,9 +286,9 @@
             <el-col :xs="24" :sm="24" :lg="24" class="card-panel-duibi">
               <div class="card-panel-duibi-title">
                 <span class="span1">相比上一次身高平均</span>
-                <span class="span2">{{avgHwLast.height?isNull((avgHwLast.height)-(avgHw.height),1):'-'}}CM</span>
-                <img v-if="(avgHwLast.height)-(avgHw.height)>0" src="./img/hongse-icon.png" class="span3"/>
-                <img v-if="(avgHwLast.height)-(avgHw.height)<0" src="./img/luse-icon.png" class="span3"/>
+                <span class="span2">{{avgHwLast.height?isNull((avgHw.height)-(avgHwLast.height),1):'-'}}CM</span>
+                <img v-if="(avgHw.height)-(avgHwLast.height)>0" src="./img/hongse-icon.png" class="span3"/>
+                <img v-if="(avgHw.height)-(avgHwLast.height)<0" src="./img/luse-icon.png" class="span3"/>
 
 
               </div>
@@ -310,7 +310,7 @@
                   </div>
 
                   <div class="tip3">
-                    <strong class="strong">{{avgHwLast.manHeight?isNull(avgHwLast.manHeight-avgHw.manHeight,1):'-'}}CM</strong>
+                    <strong class="strong">{{avgHwLast.manHeight?isNull(avgHw.manHeight-avgHwLast.manHeight,1):'-'}}CM</strong>
                     <img v-if="avgHwLast.manHeight-avgHw.manHeight>0" src="./img/luse-icon.png"
                          style="margin-left: 10px;"/>
                     <img v-if="avgHwLast.manHeight-avgHw.manHeight<0" src="./img/hongse-icon.png"
@@ -335,7 +335,7 @@
                   </div>
 
                   <div class="tip3">
-                    <strong class="strong">{{avgHwLast.femaleHeight?isNull(avgHwLast.femaleHeight-avgHw.femaleHeight,1):'-'}}CM</strong>
+                    <strong class="strong">{{avgHwLast.femaleHeight?isNull(avgHw.femaleHeight-avgHwLast.femaleHeight,1):'-'}}CM</strong>
 
                     <img v-if="avgHwLast.femaleHeight-avgHw.femaleHeight>0" src="./img/luse-icon.png"
                          style="margin-left: 10px;"/>
@@ -374,10 +374,10 @@
             <el-col :xs="24" :sm="24" :lg="24" class="card-panel-duibi">
               <div class="card-panel-duibi-title">
                 <span class="span1">相比上一次体重平均</span>
-                <span class="span2">{{avgHwLast.weight?isNull((avgHwLast.weight)-(avgHw.weight),1):'-'}}KG</span>
+                <span class="span2">{{avgHwLast.weight?isNull((avgHw.weight)-(avgHwLast.weight),1):'-'}}KG</span>
                 <!--<img class="span3" src="./img/icon_shangs.png"/>-->
-                <img v-if="(avgHwLast.weight)-(avgHw.weight)>0" src="./img/hongse-icon.png" class="span3"/>
-                <img v-if="(avgHwLast.weight)-(avgHw.weight)<0" src="./img/luse-icon.png" class="span3"/>
+                <img v-if="(avgHwLast.weight)-(avgHw.weight)>0" src="./img/luse-icon.png" class="span3"/>
+                <img v-if="(avgHwLast.weight)-(avgHw.weight)<0" src="./img/hongse-icon.png" class="span3"/>
               </div>
             </el-col>
 
@@ -398,7 +398,7 @@
 
                   <div class="tip3">
                     <strong
-                      class="strong">{{avgHwLast.manweight?isNull(avgHwLast.manweight-avgHw.manweight,1):'-'}}KG</strong>
+                      class="strong">{{avgHwLast.manweight?isNull(avgHw.manweight-avgHwLast.manweight,1):'-'}}KG</strong>
                     <!--<img src="./img/hongse-icon.png" />-->
                     <img v-if="avgHwLast.manweight-avgHw.manweight>0" src="./img/luse-icon.png"
                          style="margin-left: 10px;"/>
@@ -424,11 +424,11 @@
                   </div>
 
                   <div class="tip3">
-                    <strong class="strong">{{avgHwLast.femaleweight?isNull(avgHwLast.femaleweight-avgHw.femaleweight,1):'-'}}KG</strong>
+                    <strong class="strong">{{avgHwLast.femaleweight?isNull(avgHw.femaleweight-avgHwLast.femaleweight,1):'-'}}KG</strong>
                     <!--<img src="./img/hongse-icon.png" style="margin-left: 10px;"/>-->
-                    <img v-if="avgHwLast.femaleweight-avgHw.femaleweight>0" src="./img/hongse-icon.png"
+                    <img v-if="avgHwLast.femaleweight-avgHw.femaleweight>0" src="./img/luse-icon.png"
                          style="margin-left: 10px;"/>
-                    <img v-if="avgHwLast.femaleweight-avgHw.femaleweight<0" src="./img/luse-icon.png"
+                    <img v-if="avgHwLast.femaleweight-avgHw.femaleweight<0" src="./img/hongse-icon.png"
                          style="margin-left: 10px;"/>
                   </div>
                 </div>
@@ -544,7 +544,6 @@
               :seriesData="fxianObj.lastLineCur"
               :xAxisData="fxianObj.dataArr"
               :legendData="fxianObj.legendData"
-              unit="人"
             ></echartLine>
             <noData v-else></noData>
           </div>
