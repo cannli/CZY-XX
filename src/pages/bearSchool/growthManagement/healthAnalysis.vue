@@ -400,9 +400,9 @@
                     <strong
                       class="strong">{{avgHwLast.manweight?isNull(avgHwLast.manweight-avgHw.manweight,1):'-'}}KG</strong>
                     <!--<img src="./img/hongse-icon.png" />-->
-                    <img v-if="avgHwLast.manweight-avgHw.manweight>0" src="./img/hongse-icon.png"
+                    <img v-if="avgHwLast.manweight-avgHw.manweight>0" src="./img/luse-icon.png"
                          style="margin-left: 10px;"/>
-                    <img v-if="avgHwLast.manweight-avgHw.manweight<0" src="./img/luse-icon.png"
+                    <img v-if="avgHwLast.manweight-avgHw.manweight<0" src="./img/hongse-icon.png"
                          style="margin-left: 10px;"/>
                   </div>
                 </div>
@@ -443,18 +443,6 @@
           <div class="card-box" style="display: inline-block;">
             <span class="card-title">体态统计</span>
           </div>
-
-          <!-- <div class="bot-right">
-             <el-select v-model="value1" placeholder="请选择" size="medium">
-               <el-option
-                 v-for="item in dataEnum.tiTaiList"
-                 :key="item.val"
-                 :label="item.name"
-                 :value="item.val">
-               </el-option>
-             </el-select>
-           </div>-->
-
         </el-col>
 
         <el-col :span="15">
@@ -464,6 +452,7 @@
               :seriesData="titaiData.seriesData"
               :xAxisData="titaiData.xAxisData"
               :legendData="titaiData.legendData"
+              unit="人"
             ></echartLine>
             <noData v-else></noData>
           </div>
@@ -477,10 +466,10 @@
                   <span>男生</span>
                 </div>
                 <div class="text item">
-                  <span>本次异常：{{ycData.nanYC}}</span>
+                  <span>本次异常：{{ycData.nanYC}}人</span>
                 </div>
                 <div class="text item">
-                  <span>上次异常：{{ycData.LnanYC}}</span>
+                  <span>上次异常：{{ycData.LnanYC}}人</span>
                 </div>
                 <div class="text item">
                   <span>{{(ycData.LnanYC)-(ycData.nanYC)}}人</span>
@@ -499,10 +488,10 @@
                   <span>女生</span>
                 </div>
                 <div class="text item">
-                  <span>本次异常：{{ycData.womanYC}}</span>
+                  <span>本次异常：{{ycData.womanYC}}人</span>
                 </div>
                 <div class="text item">
-                  <span>上次异常：{{ycData.LwomanYC}}</span>
+                  <span>上次异常：{{ycData.LwomanYC}}人</span>
                 </div>
                 <div class="text item">
                   <span>{{(ycData.LwomanYC)-(ycData.womanYC)}}人</span>
@@ -524,10 +513,10 @@
               <span>总体</span>
             </div>
             <div class="text item">
-              <span>本次异常：{{(ycData.nanYC)+(ycData.womanYC)}}</span>
+              <span>本次异常：{{(ycData.nanYC)+(ycData.womanYC)}}人</span>
             </div>
             <div class="text item">
-              <span>上次异常：{{(ycData.LnanYC)+(ycData.LwomanYC)}}</span>
+              <span>上次异常：{{(ycData.LnanYC)+(ycData.LwomanYC)}}人</span>
             </div>
             <div class="text item">
               <span>{{(ycData.LnanYC+ycData.LwomanYC)-(ycData.LnanYC+ycData.LwomanYC)}}人</span>
@@ -555,6 +544,7 @@
               :seriesData="fxianObj.lastLineCur"
               :xAxisData="fxianObj.dataArr"
               :legendData="fxianObj.legendData"
+              unit="人"
             ></echartLine>
             <noData v-else></noData>
           </div>

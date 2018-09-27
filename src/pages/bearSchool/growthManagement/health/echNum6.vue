@@ -71,15 +71,15 @@
               saveAsImage: {show: true}
             }
           },
-          tooltip : {
+          tooltip: {
             trigger: 'item',
-            formatter: "{a} <br/>{b} : {c} ({d}%)"
+            formatter: "{a} <br/>{b} : {c}人 ({d}%)"
           },
           legend: {
             orient: 'vertical',
             // x: 'left',
             // x: '5%',
-            top:'5%',
+            top: '5%',
             type: 'scroll',
             data: this.curPieObj.dataArr
           },
@@ -87,14 +87,14 @@
             {
               name: '本次风险比例',
               type: 'pie',
-              radius : '50%',
+              radius: '50%',
               center: ['20%', '50%'],
               data: this.curPieObj.curPie
             },
             {
               name: '上次风险比例',
               type: 'pie',
-              radius : '50%',
+              radius: '50%',
               center: ['70%', '50%'],
               data: this.curPieObj.lastPie
             }

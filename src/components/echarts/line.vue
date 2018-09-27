@@ -106,7 +106,6 @@
             data: seriesData[x]
           })
         }
-console.log(seriesArr,45646)
         this.chart.setOption({
         //  color:this.color,
           tooltip: {
