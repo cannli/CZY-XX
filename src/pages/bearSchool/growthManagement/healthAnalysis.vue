@@ -59,7 +59,7 @@
                 <el-col :offset="1" :span="13" class="nowrap">&emsp;&emsp;<span title="男生平均身高变化情况">男生平均身高变化情况：</span>
                 </el-col>
                 <el-col :span="10">{{all.lastManH}}CM<span class="icon-span">→</span>{{all.manH}}CM
-                  <img v-if="all.manH<lastFemale.lastManH" src="./img/luse-icon.png"  style="margin-left: 3px;"/>
+                  <img v-if="all.manH<all.lastManH" src="./img/luse-icon.png"  style="margin-left: 3px;"/>
                   <img v-if="all.manH>all.lastManH" src="./img/hongse-icon.png" style="margin-left: 3px;"/>
                 </el-col>
               </el-row>
@@ -311,8 +311,8 @@
 
                   <div class="tip3">
                     <strong class="strong">{{avgHwLast.manHeight?isNull(avgHwLast.manHeight-avgHw.manHeight,1):'-'}}CM</strong>
-                   <!-- <img v-if="avgHwLast.manHeight-avgHw.manHeight>0" src="./img/hongse-icon.png"
-                         style="margin-left: 10px;"/>-->
+                    <img v-if="avgHwLast.manHeight-avgHw.manHeight>0" src="./img/luse-icon.png"
+                         style="margin-left: 10px;"/>
                     <img v-if="avgHwLast.manHeight-avgHw.manHeight<0" src="./img/hongse-icon.png"
                          style="margin-left: 10px;"/>
                   </div>
@@ -337,8 +337,8 @@
                   <div class="tip3">
                     <strong class="strong">{{avgHwLast.femaleHeight?isNull(avgHwLast.femaleHeight-avgHw.femaleHeight,1):'-'}}CM</strong>
 
-                   <!-- <img v-if="avgHwLast.femaleHeight-avgHw.femaleHeight>0" src="./img/hongse-icon.png"
-                         style="margin-left: 10px;"/>-->
+                    <img v-if="avgHwLast.femaleHeight-avgHw.femaleHeight>0" src="./img/luse-icon.png"
+                         style="margin-left: 10px;"/>
                     <img v-if="avgHwLast.femaleHeight-avgHw.femaleHeight<0" src="./img/hongse-icon.png"
                          style="margin-left: 10px;"/>
                   </div>
