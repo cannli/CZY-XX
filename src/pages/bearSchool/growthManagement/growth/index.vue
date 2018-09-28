@@ -388,7 +388,7 @@
         let seriesData = []
         let height = []  // 总平均
         let manHeight = []  // 男平均
-        let felmanHeight = [] // 女平均
+        let femaleHeight = [] // 女平均
         let legendData = []
 
         let sgPJ = undefined
@@ -405,8 +405,8 @@
           if (dataAll[x].height) {
             height.push(dataAll[x].height.toFixed(2))
           }
-          if (dataAll[x].felmanHeight) {
-            felmanHeight.push(dataAll[x].felmanHeight.toFixed(2))
+          if (dataAll[x].femaleHeight) {
+            femaleHeight.push(dataAll[x].femaleHeight.toFixed(2)) //
           }
         }
 
@@ -416,9 +416,9 @@
           })
           legendData.push('男生平均身高')
         }
-        if (felmanHeight && felmanHeight.length > 0) {
+        if (femaleHeight && femaleHeight.length > 0) {
           seriesData.push({
-            type: 'bar', data: felmanHeight
+            type: 'bar', data: femaleHeight
           })
           legendData.push('女生平均身高')
         }
