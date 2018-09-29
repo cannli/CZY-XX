@@ -448,7 +448,7 @@
         let seriesData = []
         let weight = []  // 总平均
         let manweight = []  // 男平均
-        let felmanweight = [] // 女平均
+        let femaleweight = [] // 女平均
         let legendData = []
 
         for (let x in dataAll) {
@@ -463,8 +463,8 @@
           if (dataAll[x].weight) {
             weight.push(dataAll[x].weight.toFixed(2))
           }
-          if (dataAll[x].felmanweight) {
-            felmanweight.push(dataAll[x].felmanweight.toFixed(2))
+          if (dataAll[x].femaleweight) {
+            femaleweight.push(dataAll[x].femaleweight.toFixed(2))
           }
         }
 
@@ -474,9 +474,9 @@
           })
           legendData.push('男生平均体重')
         }
-        if (felmanweight && felmanweight.length > 0) {
+        if (femaleweight && femaleweight.length > 0) {
           seriesData.push({
-            type: 'bar', data: felmanweight
+            type: 'bar', data: femaleweight
           })
           legendData.push('女生平均体重')
         }
