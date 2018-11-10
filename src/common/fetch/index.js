@@ -25,7 +25,7 @@ export default function fetch(options) {
       //设置默认根地址
       baseURL: '/',
       //设置请求超时设置
-      timeout: 2000,
+      timeout: 60000,
       //设置请求时的header
       headers: {
         'X-Requested-With': 'XMLHttpRequest',
