@@ -452,7 +452,7 @@
       getSum(total, num) {
         return total + num;
       },
-      dataTZ(flag, data) { // 身高
+      dataTZ(flag, data) { // 体重
         let self = this
         self.weiDataObj = []
         let dataAll = data
@@ -484,7 +484,6 @@
 
           peopleAll += dataAll[x].manCount + dataAll[x].femaleCount
           tzAll += ((dataAll[x].manCount || 0) * (dataAll[x].manweight || 0)) + ((dataAll[x].femaleCount || 0) * (dataAll[x].femaleweight || 0))
-          console.log(tzAll,999999999)
         }
 
         if (manweight && manweight.length > 0) {
