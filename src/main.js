@@ -28,7 +28,8 @@ import './ui.js'
 import VueAreaLinkage from 'vue-area-linkage'
 import 'vue-area-linkage/dist/index.css';
 
-window.projectRootUrl =  'http://www.egrowth.cn/api' // 'http://health.junlz.com/bghealth/api'
+window.projectRootUrl =  'http://www.egrowth.cn/api' 
+// 'http://health.junlz.com/bghealth/api'
 //  window.projectRootUrl = 'http://39.107.74.125/bghealth/api'
 // window.projectRootUrl = 'http://localhost'
 //使用地区插件
